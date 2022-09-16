@@ -1,0 +1,13 @@
+uuid: 90d64425-2714-4cb6-aa7c-f35676854133
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.lp_template
+id: paragraph.lp_template.default
+targetEntityType: paragraph
+bundle: lp_template
+mode: default
+content: {  }
+hidden:
+  search_api_excerpt: true

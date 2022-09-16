@@ -1,0 +1,17 @@
+uuid: 89cbb06d-33bb-4590-ab25-d97a29a296a1
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Template
+type: lp_template
+description: 'Create a Layout Paragraphs template.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

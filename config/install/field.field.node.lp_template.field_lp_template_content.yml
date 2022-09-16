@@ -1,0 +1,102 @@
+uuid: 533d532c-2af1-4244-91fb-f13673f8b72e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lp_template_content
+    - node.type.lp_template
+  module:
+    - entity_reference_revisions
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.lp_template.field_lp_template_content
+field_name: field_lp_template_content
+entity_type: node
+bundle: lp_template
+label: Content
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles: null
+    negate: 1
+    target_bundles_drag_drop:
+      banner:
+        weight: 21
+        enabled: false
+      block_cards:
+        weight: 22
+        enabled: false
+      contact_us:
+        weight: 23
+        enabled: false
+      cta:
+        weight: 28
+        enabled: false
+      dropdown:
+        weight: 24
+        enabled: false
+      feature_stats_banner:
+        weight: 25
+        enabled: false
+      heading:
+        weight: 26
+        enabled: false
+      highlights:
+        weight: 27
+        enabled: false
+      hr:
+        weight: 33
+        enabled: false
+      links:
+        weight: 22
+        enabled: false
+      lp_template:
+        weight: 35
+        enabled: false
+      media:
+        weight: 28
+        enabled: false
+      newspaper:
+        weight: 29
+        enabled: false
+      people:
+        weight: 30
+        enabled: false
+      product_solution:
+        weight: 31
+        enabled: false
+      review_widget:
+        weight: 32
+        enabled: false
+      rotating_banner:
+        weight: 33
+        enabled: false
+      section:
+        weight: 34
+        enabled: false
+      strip_banner:
+        weight: 35
+        enabled: false
+      tabbed:
+        weight: 36
+        enabled: false
+      testimonial:
+        weight: 37
+        enabled: false
+      text:
+        weight: 38
+        enabled: false
+      timeline_light:
+        weight: 39
+        enabled: false
+      trending_now:
+        weight: 40
+        enabled: false
+field_type: entity_reference_revisions

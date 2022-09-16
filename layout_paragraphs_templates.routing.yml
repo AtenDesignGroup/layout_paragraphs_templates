@@ -1,0 +1,12 @@
+layout_paragraphs_templates.insert:
+  path: '/layout-paragraphs-templates/{layout_paragraphs_layout}/insert/{node}'
+  defaults:
+    _controller: '\Drupal\layout_paragraphs_templates\Controller\TemplateController::insert'
+  options:
+    parameters:
+      layout_paragraphs_layout:
+        layout_paragraphs_layout_tempstore: TRUE
+      node:
+        type: entity:node
+  requirements:
+    _layout_paragraphs_builder_access: 'TRUE'

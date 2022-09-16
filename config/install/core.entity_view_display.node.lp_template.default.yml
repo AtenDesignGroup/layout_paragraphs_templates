@@ -1,0 +1,28 @@
+uuid: e4c9b1a1-2636-4376-89b8-1d773bbf0fe0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.lp_template.field_lp_template_content
+    - node.type.lp_template
+  module:
+    - layout_paragraphs
+    - user
+id: node.lp_template.default
+targetEntityType: node
+bundle: lp_template
+mode: default
+content:
+  field_lp_template_content:
+    type: layout_paragraphs
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  links: true
+  search_api_excerpt: true

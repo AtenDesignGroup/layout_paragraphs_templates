@@ -1,0 +1,25 @@
+uuid: 1c2b1fab-5b66-4a72-b68b-2d1f2fcb7e17
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.lp_template_list
+    - field.field.node.lp_template.field_lp_template_content
+    - node.type.lp_template
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.lp_template.lp_template_list
+targetEntityType: node
+bundle: lp_template
+mode: lp_template_list
+content: {  }
+hidden:
+  field_lp_template_content: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

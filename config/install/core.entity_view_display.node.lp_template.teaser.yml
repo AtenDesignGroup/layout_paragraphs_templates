@@ -1,0 +1,24 @@
+uuid: 68e999c2-949b-4905-9f64-2529fd9ef192
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.lp_template.field_lp_template_content
+    - node.type.lp_template
+  module:
+    - user
+id: node.lp_template.teaser
+targetEntityType: node
+bundle: lp_template
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_lp_template_content: true
+  langcode: true
+  search_api_excerpt: true

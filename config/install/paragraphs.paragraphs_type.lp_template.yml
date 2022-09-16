@@ -1,0 +1,10 @@
+uuid: ec80863e-dede-491b-8a25-6ee6a0a92c53
+langcode: en
+status: true
+dependencies: {  }
+id: lp_template
+label: 'From Template'
+icon_uuid: null
+icon_default: null
+description: 'Start with a template'
+behavior_plugins: {  }

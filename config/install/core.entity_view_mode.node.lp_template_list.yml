@@ -1,0 +1,10 @@
+uuid: b4270b11-c745-4b57-b798-e6b44c32bacc
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.lp_template_list
+label: 'Template Listing'
+targetEntityType: node
+cache: true

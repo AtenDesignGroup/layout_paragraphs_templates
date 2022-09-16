@@ -1,0 +1,4 @@
+templates_list:
+  css:
+      layout:
+        css/templates-list.css: {}

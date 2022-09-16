@@ -1,0 +1,7 @@
+name: Layout Paragraphs Templates
+description: Provides templates for Layout Paragraphs.
+type: module
+core_version_requirement: ^8 || ^9
+package: Layout Paragraphs
+dependencies:
+  - layout_paragraphs:layout_paragraphs

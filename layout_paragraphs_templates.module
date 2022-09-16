@@ -1,0 +1,85 @@
+<?php
+
+/**
+ * @file
+ * Contains Layout Paragraphs Template module.
+ */
+
+use Drupal\Core\Url;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_layout_paragraphs_component_form_alter().
+ */
+function layout_paragraphs_templates_form_layout_paragraphs_component_form_alter(array &$form, FormStateInterface &$form_state) {
+  $paragraph = $form['#paragraph'];
+  $type = $paragraph->bundle();
+  if ($type == 'lp_template') {
+    unset($form['actions']);
+    $view_builder = \Drupal::entityTypeManager()->getViewBuilder('node');
+    $node_storage = \Drupal::entityTypeManager()->getStorage('node');
+    $ids = $node_storage->getQuery()
+      ->condition('status', 1)
+      ->condition('type', 'lp_template')
+      ->sort('created', 'ASC')
+      ->sort('sticky', 'DESC')
+      ->execute();
+    $form['templates'] = [
+      '#theme' => 'layout_paragraphs_templates_list',
+      '#templates' => [],
+    ];
+    foreach ($node_storage->loadMultiple($ids) as $template) {
+      $form['templates']['#templates'][] = $view_builder->view($template, 'lp_template_list');
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function layout_paragraphs_templates_preprocess_node(&$variables) {
+  if ($variables['view_mode'] == 'lp_template_list' && $variables['node']->bundle() == 'lp_template') {
+    $variables['url'] = '';
+    $request = \Drupal::request();
+    $layout_paragraphs_layout = \Drupal::routeMatch()->getParameter('layout_paragraphs_layout');
+    $route_name = 'layout_paragraphs_templates.insert';
+    $route_params = [
+      'layout_paragraphs_layout' => $layout_paragraphs_layout->id(),
+      'node' => $variables['node']->id(),
+    ];
+    $query_params = [
+      'parent_uuid' => $request->query->get('parent_uuid', NULL),
+      'region' => $request->query->get('region', NULL),
+      'sibling_uuid' => $request->query->get('sibling_uuid', NULL),
+      'placement' => $request->query->get('placement', NULL),
+    ];
+    $variables['url'] = Url::fromRoute($route_name, $route_params, ['query' => $query_params])->toString();
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function layout_paragraphs_templates_theme() {
+  return [
+    'node__lp_template' => [
+      'base hook' => 'node',
+    ],
+    'layout_paragraphs_templates_list' => [
+      'variables' => [
+        'attributes' => [],
+        'templates' => [],
+      ],
+    ],
+  ];
+}
+
+/**
+ * Preprocesses variables for layout paragraphs templates list.
+ *
+ * @param array $variables
+ *   The variables passed to the template.
+ */
+function template_preprocess_layout_paragraphs_templates_list(array &$variables) {
+  $variables['#attached']['library'][] = 'layout_paragraphs_templates/templates_list';
+}

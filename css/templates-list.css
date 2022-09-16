@@ -1,0 +1,11 @@
+/* .lp-templates-list {
+  display: flex;
+}
+.lp-templates-list__item {
+  width: 32%;
+}
+.lp-templates-list__item > article {
+  transform: scale(.38);
+  transform-origin: 0% 0%;
+  width: 100vw;
+} */
